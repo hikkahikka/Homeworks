@@ -68,7 +68,7 @@ namespace timer
         }
 
         /// <summary>
-        /// вывод информации таймера
+        /// вывод информациии таймера
         /// <param name="differenceTime">хранит в себе разницу между временем из Run() и текущим </param> 
         /// 
         /// </summary>
