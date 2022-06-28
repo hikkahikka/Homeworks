@@ -9,8 +9,8 @@ namespace timer
     public class Timer
     {
         /// <summary>
-        /// <param name="time" структура в которой хранится время
-        /// <param name="isLaunched" показывает запущен таймер или нет
+        /// <param name="time"> структура в которой хранится время </param>
+        /// <param name="isLaunched"> показывает запущен таймер или нет </param>
         /// </summary>
         DateTime time;
         bool isLaunched = false;
