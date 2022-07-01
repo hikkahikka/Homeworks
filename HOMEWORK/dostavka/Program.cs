@@ -10,8 +10,9 @@ namespace dostavka
     {
         static void Main()
         {
+            DeliveryManager.StartDoZakaz();
 
-            
+
         }
     }
 }
