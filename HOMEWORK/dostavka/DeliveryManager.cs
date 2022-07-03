@@ -12,7 +12,9 @@ namespace dostavka
         public static Builder builder = new FoodBuilder();
         public static ZakazDirector zakazDirector = new ZakazDirector(builder);
         
-
+        /// <summary>
+        /// начало программы
+        /// </summary>
         public static void StartDoZakaz()
         {
             builder.CreateZakaz();
@@ -38,7 +40,10 @@ namespace dostavka
                                  food.GetTotalKkal(builder));
             
         }
-
+        /// <summary>
+        /// выбор завтрака
+        /// </summary>
+        /// <returns>индекс нужного блюда</returns>
         private static int DoBreakfastChange()
         {
             
@@ -63,7 +68,10 @@ namespace dostavka
                 }
             }
         }
-
+        /// <summary>
+        /// выбор второго завтрака
+        /// </summary>
+        /// <returns>индекс нужного блюда</returns>
         private static int DoSecondBreakfastChange()
         {
 
@@ -88,6 +96,11 @@ namespace dostavka
                 }
             }
         }
+
+        /// <summary>
+        /// выбор обеда
+        /// </summary>
+        /// <returns>индекс нужного блюда</returns>
         private static int DoLunchChange()
         {
 
@@ -112,7 +125,10 @@ namespace dostavka
                 }
             }
         }
-
+        /// <summary>
+        /// выбор полдника
+        /// </summary>
+        /// <returns>индекс нужного блюда</returns>
         private static int DoSnackChange()
         {
 
@@ -137,7 +153,10 @@ namespace dostavka
                 }
             }
         }
-
+        /// <summary>
+        /// выбор ужина
+        /// </summary>
+        /// <returns>индекс нужного блюда</returns>
         private static int DoDinnerChange()
         {
 
@@ -162,6 +181,10 @@ namespace dostavka
                 }
             }
         }
+        /// <summary>
+        /// выводит все блюда определенного приема пищи
+        /// </summary>
+        /// <param name="typeOfMeal">массив нужного приема пищи</param>
         private static void ShowVariantsMeal(string[,] typeOfMeal)
         {
             string[] nameOfType = {"Name","Price","KKals"};

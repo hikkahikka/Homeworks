@@ -16,10 +16,17 @@ namespace dostavka
         private static readonly string[,] LUNCH = { { "Borscht", "240", "100" }, { "Noodles", "200", "140" }, { "Pasta with cutlet", "210", "" }, { "Shawarma", "220", "500" } };
         private static readonly string[,] SNACK = { { "Sandwich", "120", "155" }, { "Ice cream", "100", "200" }, { "Yogurt", "70", "60" }, { "Chocopai", "40", "129" } };
         private static readonly string[,] DINNER = { { "Steak with rice", "390", "400" }, { "Potatoes with mushrooms", "270", "180" }, { "Strips", "170", "250" }, { "Sushi", "230", "270" } };
-
+        /// <summary>
+        /// <param name="zakaz">итоговый лист блюд</param>
+        /// </summary>
         public List<string[]?>? zakaz;
 
         public int numberOfDays;
+        
+        /// <summary>
+        /// 5 методов, возвращают список блюд на конкретный прием пищи
+        /// </summary>
+        /// <returns></returns>
 
         public string[,] GetBreakfast()
         {
@@ -45,6 +52,11 @@ namespace dostavka
         {
             return DINNER;
         }
+
+        /// <summary>
+        /// 5 методов,добавляют в список выбор блюда на прием пищи либо отсутствие блюда
+        /// </summary>
+        /// <param name=""> индекс блюда в массиве</param>
         public void SetBreakfast(int breakfast)
         {
             if (breakfast != -1)
@@ -120,13 +132,20 @@ namespace dostavka
         }
 
 
-
+        /// <summary>
+        /// рассчитывается скидка в зависимости от количества дней заказа
+        /// </summary>
+        /// <returns>процент скидки</returns>
         private float GetSale()
         {
             if (numberOfDays < 10) return 0;
             else return (numberOfDays % 10) / 100;
         }
 
+        /// <summary>
+        /// считается цена на весь заказ с учетом скидки
+        /// </summary>     
+        /// <returns>возвращает конечную цену</returns>
         public float GetTotalPrice(Builder builder)
         {
             int totalPrice = 0;
@@ -145,6 +164,10 @@ namespace dostavka
             return totalPrice-(float)totalPrice*percentOfSale;
         }
 
+        /// <summary>
+        /// считается калорийность заказа на один день
+        /// </summary>     
+        /// <returns>возвращает колво калорий</returns>
         public int GetTotalKkal(Builder builder)
         {
             int size = builder.GetZakaz().Count;

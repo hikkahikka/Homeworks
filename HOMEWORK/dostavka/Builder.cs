@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace dostavka
 {
+    /// <summary>
+    /// абстрактный класс строителя, содержит части по которым будет делаться итоговый продукт
+    /// </summary>
      public  abstract class Builder
     {
 
